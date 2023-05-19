@@ -24,7 +24,6 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
         /WX
     )
 endif()
-
 add_executable(list list.cpp)
 target_compile_features(list PUBLIC cxx_std_17)
 
