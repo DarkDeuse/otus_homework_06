@@ -10,7 +10,7 @@ target_include_directories(containers PRIVATE include)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
     CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    target_compile_options(containers, PRIVATE 
+    target_compile_options(containers PRIVATE 
         -g
         -Wall
         -Wextra
