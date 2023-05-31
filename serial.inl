@@ -23,7 +23,7 @@ void serial_container<T>::push_back(const int value){
             array[size_++] = value;
         };
 template <class T>
-int serial_container<T>::operator [] (const size_t index) const{
+T serial_container<T>::operator [] (const size_t index) const{
             if (index>size_){
                 std::cout<<"Out of lenght"<<std::endl;
                 return false;
@@ -32,6 +32,16 @@ int serial_container<T>::operator [] (const size_t index) const{
             int val = array[index];
             return val;}
         }
+
+template<class T>
+
+T serial_container<T>::operator = (T& other){
+    if (*this != &other){
+        this = std::move(other);
+        delete [] other;
+    }
+}
+
 template <class T>
 void serial_container<T>::erase(size_t index) {
       for (size_t i = index + 1; i < size_; ++i) {

@@ -11,14 +11,17 @@ class serial_container{
 
         void push_back(const int value);
 
-        int operator [] (const size_t index) const;
+        T operator [] (const size_t index) const;
 
-         void erase(size_t index);
+        T operator = (T& other);
+
+        void erase(size_t index);
     
-    void insert(size_t index, int value);
+        void insert(size_t index, int value);
 
-    size_t size();
-    void print();
+        size_t size();
+        void print();
+
 
 
     private:

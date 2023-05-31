@@ -16,6 +16,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
         -Wextra
         -Werror
         -pedantic
+        -fsanitize=leak
     )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(containers PRIVATE
@@ -37,6 +38,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
         -Wextra
         -Werror
         -pedantic
+        -fsanitize=leak
     )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(list PRIVATE

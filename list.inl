@@ -17,7 +17,10 @@ Node<T>::~Node() = default;
 template <class T>
 list_container<T>::list_container(): first{nullptr}, last{nullptr}, size_{0}{}
 template <class T>
-list_container<T>::~list_container() = default;
+list_container<T>::~list_container(){
+    delete first;
+    delete last;
+};
 template <class T>
 int list_container<T>::size(){
             return size_;
