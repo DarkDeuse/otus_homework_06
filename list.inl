@@ -18,8 +18,13 @@ template <class T>
 list_container<T>::list_container(): first{nullptr}, last{nullptr}, size_{0}{}
 template <class T>
 list_container<T>::~list_container(){
+    if(first == last){
+        delete first;
+    }
+    else{
     delete first;
     delete last;
+    }
 };
 template <class T>
 int list_container<T>::size(){
